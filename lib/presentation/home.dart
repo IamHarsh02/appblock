@@ -3,6 +3,7 @@ import 'package:mybloackapp/logic/bloc_logic/counter_bloc.dart';
 import 'package:mybloackapp/logic/bloc_logic/counter_event.dart';
 import 'package:mybloackapp/logic/cubit_logic/counter_cubit.dart';
 import 'package:mybloackapp/logic/cubit_logic/counter_state.dart';
+import 'package:mybloackapp/presentation/secon_page.dart';
 
 import '../constant/string_constant.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,7 +45,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return blocStateScreen(context);
+    return cubitStateScreen(context);
   }
 
   Widget cubitStateScreen(BuildContext context) {
@@ -76,7 +77,20 @@ class _HomeState extends State<Home> {
                     child: const Text(
                       '+',
                       style: TextStyle(fontSize: 25),
-                    ))
+                    )),
+                SizedBox(
+                  height: 30,
+                ),
+                IconButton(
+                  icon: Icon(Icons.navigate_next),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SecondPage()),
+                    );
+                  },
+                ),
               ],
             ),
           ),
