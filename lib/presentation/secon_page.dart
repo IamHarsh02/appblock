@@ -74,7 +74,7 @@ class MyHomePage extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.navigate_before),
               onPressed: () {
-                Navigator.pop(
+                Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const Home()),
                 );
